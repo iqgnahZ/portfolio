@@ -1,0 +1,48 @@
+.nav {
+  height: 80px;
+  background-color: var(--nav-bg);
+  width: 100%;
+  position: fixed;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.nav_wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav_logo {
+  font-size: 1.5rem;
+  font-family: var(--secondary-font-family);
+}
+
+.nav_menu {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.nav_menu_items a {
+  margin-right: 20px;
+  margin-left: 20px;
+  font-size: 18px;
+  position: relative;
+  cursor: pointer;
+  color: (--text-color);
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.switch {
+  position: relative;
+  margin-left: 10px;
+  margin-right: 20px;
+  top: 5px;
+
+}

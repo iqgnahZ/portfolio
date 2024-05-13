@@ -1,8 +1,12 @@
 import Switch from 'react-switch'
 import './header.css'
+import { useTheme } from '../../context/userTheme'
 
 
 const Header = () => {
+
+  const {isDarkTheme, toggleTheme} = useTheme()
+
   return (
     <div className="nav">
       <div className="nav_wrapper container">
@@ -25,7 +29,7 @@ const Header = () => {
           </li>
           <div className="buttons">
             <label htmlFor="" className='switch'>
-              <Switch height={24} width={48} onColor='#4D4D4D' offColor='#ccc'/>
+              <Switch height={24} width={48} onColor='#4D4D4D' offColor='#ccc' onChange={toggleTheme} checked = {isDarkTheme}/>
             </label>
             <a href="" className='button'>
               Hire Me
