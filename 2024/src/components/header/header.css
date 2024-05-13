@@ -30,7 +30,30 @@
   font-size: 18px;
   position: relative;
   cursor: pointer;
-  color: (--text-color);
+  color: var(--text-color);
+  text-decoration: none !important;
+  transition: all 0.5s ease-in;
+}
+
+.nav_menu_items a::before {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  height: 2px;
+  background-color: transparent;
+  transition: all 0.5s ease-in;
+  width: 100%;
+}
+
+.nav_menu_items a:hover {
+  color: var(--special-text);
+}
+
+.nav_menu_items a:hover::before {
+  content: '';
+  background-color: var(--special-text);
+
 }
 
 .buttons {
