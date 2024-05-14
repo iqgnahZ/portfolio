@@ -1,16 +1,16 @@
 import { FaWeixin, FaPlay } from 'react-icons/fa'
 import './home.css' 
-import HeroImg from '../assets/dev.png'
+import PersonImg from '../assets/Rick.png'
 
 const Home = () => {
   return (
     <div className="container home">
-      <section className='hero-section' id='home'>
-        <div className='hero-section__left '>
-          <div className='hero-section__special-text'>
+      <section className='person-section' id='home'>
+        <div className='person-section__left '>
+          <div className='person-section__special-text'>
             Hello I am <br/> Rick
           </div>
-          <div className='hero-section__paragraph'>
+          <div className='person-section__paragraph'>
             <h3>
               Fronted Developer specialised in HTML, CSS, JavaScript and React
             </h3>
@@ -26,10 +26,10 @@ const Home = () => {
             <span>Video Link</span>
           </div>
         </div>
-        <div className='hero-section__right'>
-          <div className="hero-section__image">
-            <img src={HeroImg} alt="hero_img" />
-            <div className="hero-section__image-half-round-shape"></div>
+        <div className='person-section__right'>
+          <div className="person-section__image">
+            <img src={PersonImg} alt="person_img" />
+            <div className="person-section__image-half-round-shape"></div>
             <div className="social-links">
               <a href="">
                 <FaWeixin/>
