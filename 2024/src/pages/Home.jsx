@@ -5,12 +5,19 @@ import { cards } from '../utils/Data.js'
 import Card from '../components/card/Card.jsx'
 import { v4 as uuid } from 'uuid'
 import { useEffect, useRef } from 'react'
+import { register } from 'swiper/element/bundle'
 
+
+import Portfolio1 from '../assets/project-slider-img-1.webp'
+import Portfolio2 from '../assets/project-slider-img-2.webp'
+import Portfolio3 from '../assets/project-slider-img-3.webp'
+import Portfolio4 from '../assets/project-slider-img-4.webp'
 
 
 const Home = () => {
   
   const skillRef = useRef(null)
+  const swiperRef = useRef(null)
 
   useEffect(()=> {
     const observer = new IntersectionObserver(
@@ -28,6 +35,28 @@ const Home = () => {
       observer.disconnect()
     }
   }, [])
+
+  useEffect(() => {
+    register()
+    const params = {
+      breakpoints: {
+        280: {
+          slidesPerView: 1,
+        },
+        600: {
+          slidesPerView: 2,
+        },
+        991: {
+          slidesPerView: 3,
+        },
+        allowTouchMove: true,
+      },
+    }
+
+    Object.assign(swiperRef.current, params)
+    swiperRef.current.initialize()
+  }, [])
+
 
   const animateProgressbar = () => {
     const progressBars = document.querySelectorAll('.skill__progress-line')
@@ -87,8 +116,8 @@ const Home = () => {
 
       <section className='skill' id='skills' ref={skillRef}>
           <div className="skill__left">
-            <div className="section__lable">My Skills</div>
-            <div className="section__title">My Specials skills are</div>
+            <h3 className="section__lable">My Skills</h3>
+            <h2 className="section__title">My Specials skills are</h2>
             <a href="/resume.pdf" download={'resume.pdf'} className='button'>Get Resume</a>
           </div>
           <div className="skill__right">
@@ -115,6 +144,95 @@ const Home = () => {
             </div>
           </div>
       </section>
+
+      <section className="portfolio" id='portfolio'>
+        <h3 className="section__lable">My Portfolio</h3>
+        <h2 className="section__title">My Complete Projects</h2>
+        <div className="portfolio__grid">
+          <div className="portfolio__card">
+            <img src={Portfolio1} alt="portfolio 1" />
+            <div className="portfolio__card-title">Portfilio 1</div>
+          </div>
+            <div className="portfolio__card">
+            <img src={Portfolio2} alt="portfolio 2" />
+            <div className="portfolio__card-title">Portfilio 2</div>
+          </div>
+            <div className="portfolio__card">
+            <img src={Portfolio3} alt="portfolio 3" />
+            <div className="portfolio__card-title">Portfilio 3</div>
+          </div>
+            <div className="portfolio__card">
+            <img src={Portfolio4} alt="portfolio 4" />
+            <div className="portfolio__card-title">Portfilio 4</div>
+          </div>
+        </div>
+      </section>
+      
+			<section className='testimonials' id='testimonials'>
+				<h3 className='section__label'>Testimonials</h3>
+				<h2 className=' section__title'>Satisfied Clients Say</h2>
+				<div className='testimonials__wrapper'>
+					{/* <swiper-container speed='500' ref={swiperRef} css-mode='true'> */}
+          <swiper-container speed='500' ref={swiperRef}>
+						<swiper-slide>
+							<div className='testimonials__card'>
+								<div className='testimonials__text'>
+									Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+									Voluptatibus, enim.
+								</div>
+								<div className='testimonials__author'>Blake</div>
+								<div className='testimonials__author-title'>
+									CEO Carrington Atlantic
+								</div>
+							</div>
+						</swiper-slide>
+						<swiper-slide>
+							<div className='testimonials__card'>
+								<div className='testimonials__text'>
+									Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+									Voluptatibus, enim.
+								</div>
+								<div className='testimonials__author'>Fallon</div>
+								<div className='testimonials__author-title'>
+									CEO Fallon Unlimited
+								</div>
+							</div>
+						</swiper-slide>
+						<swiper-slide>
+							<div className='testimonials__card'>
+								<div className='testimonials__text'>
+									Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+									Voluptatibus, enim.
+								</div>
+								<div className='testimonials__author'>Sam</div>
+								<div className='testimonials__author-title'>CEO Van Kirk</div>
+							</div>
+						</swiper-slide>
+						<swiper-slide>
+							<div className='testimonials__card'>
+								<div className='testimonials__text'>
+									Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+									Voluptatibus, enim.
+								</div>
+								<div className='testimonials__author'>Steven</div>
+								<div className='testimonials__author-title'>
+									CEO carrington foundation
+								</div>
+							</div>
+						</swiper-slide>
+						<swiper-slide>
+							<div className='testimonials__card'>
+								<div className='testimonials__text'>
+									Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+									Voluptatibus, enim.
+								</div>
+								<div className='testimonials__author'>Steve</div>
+								<div className='testimonials__author-title'>CEO Dan Joe</div>
+							</div>
+						</swiper-slide>
+					</swiper-container>
+				</div>
+			</section>
     </div>
   )
 }
