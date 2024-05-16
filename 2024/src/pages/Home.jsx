@@ -12,6 +12,7 @@ import Portfolio1 from '../assets/project-slider-img-1.webp'
 import Portfolio2 from '../assets/project-slider-img-2.webp'
 import Portfolio3 from '../assets/project-slider-img-3.webp'
 import Portfolio4 from '../assets/project-slider-img-4.webp'
+import Contact from '../components/contact/Contact.jsx'
 
 
 const Home = () => {
@@ -233,6 +234,13 @@ const Home = () => {
 					</swiper-container>
 				</div>
 			</section>
+
+      <section className='contact' id='contact'>
+        <h3 className="section__lable">Contact</h3>
+        <h2 className="section__title">Connect with us</h2>
+
+        <Contact/>
+      </section>
     </div>
   )
 }
