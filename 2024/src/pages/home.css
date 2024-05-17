@@ -276,3 +276,99 @@
   font-size: 22px;
   margin-top: 30px;
 }
+
+/* responsive part */
+
+@media (max-width: 991px) {
+  .home {
+    padding: 120px 50px 0 50px;
+  }
+
+  .person-section {
+    flex-direction: column;
+  }
+
+  .person-section__image {
+    left: 40%;
+    width: 400px;
+    transform: translateX(-60%);
+  }
+
+  .person-section__image img {
+    min-width: 100%;
+    height: auto;
+  }
+
+  .person-section__image-half-round-shape {
+    bottom: 2%;
+    left: 60%;
+    width: 258px;
+    height: 450px;
+  }
+
+  /* icon will cover the image */
+  .social-links a:nth-child(1) {
+    left: 370px;
+    right: 0;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .skill {
+    flex-direction: column;
+  }
+
+  .skill__left, .skill__right {
+    width: 100%;
+  }
+
+  .skill__right {
+    margin-top: 60px;
+  }
+
+  .portfolio__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .person-section__special-text {
+    font-size: 52px;
+  }
+
+  .section__title {
+    font-size: 42px;
+  }
+
+  .portfolio__grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .home {
+    padding: 100px 20px 50px 20px;
+  }
+
+  .person-section__special-text {
+    font-size: 42px;
+  }
+
+  .person-section__image-half-round-shape {
+    left: 45%;
+  }
+
+  /* .social-links a:nth-child(1) {
+    left: 313px;
+  } */
+
+  .hamburger-menu {
+    padding: 0 20px;
+  }
+}

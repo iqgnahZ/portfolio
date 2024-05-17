@@ -1,17 +1,23 @@
 import Switch from 'react-switch'
 import './header.css'
 import { useTheme } from '../../context/userTheme'
+import { useState } from 'react'
 
 
 const Header = () => {
 
   const {isDarkTheme, toggleTheme} = useTheme()
+  const [isMobileMenuOpen, setIMobileMenuOpen] = useState(false)
+  
+  const toggleMobileMenu = () => {
+    setIMobileMenuOpen(!isMobileMenuOpen)
+  }
 
   return (
-    <div className="nav">
+    <div className={`nav ${isMobileMenuOpen ? 'mobile-menu-open' : ''}`}>
       <div className="nav_wrapper container">
         <div className="nav_logo">Rick</div>
-        <ul className="nav_menu">
+        <ul className={`nav_menu ${isMobileMenuOpen ? 'mobile-menu' : ''}`}>
           <li className="nav_menu_items">
             <a href="#home">Home</a>
           </li>
@@ -37,10 +43,10 @@ const Header = () => {
           </div>
         </ul>
       </div>
-      <div className="hamburger-menu">
-        <div className="bar"></div>
-        <div className="bar"></div>
-        <div className="bar"></div>
+      <div className="hamburger-menu" onClick={toggleMobileMenu}>
+        <div className={`bar ${isMobileMenuOpen ? 'open' : ''}`}></div>
+        <div className={`bar ${isMobileMenuOpen ? 'open' : ''}`}></div>
+        <div className={`bar ${isMobileMenuOpen ? 'open' : ''}`}></div>
       </div>
 
     </div>
